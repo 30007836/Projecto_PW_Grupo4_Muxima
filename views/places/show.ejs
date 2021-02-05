@@ -1,0 +1,27 @@
+<h2 class="page-header">
+    <%= place.name %>
+</h2>
+<div class="book-details">
+    <img class="book-cover" src="<%= place.mainImagePath %>">
+
+    <div class="book-details-grid">
+        <div class="book-details-label">Categoria: <%= place.category.name %>
+        </div>
+        <div class="book-details-label">Endereço: <%= place.address %>
+        </div>
+        <div class="book-details-label">Provincia: <%= place.province %>
+        </div>
+        <div class="book-details-label">Descrição: <%= place.description %>
+        </div>
+    </div>
+</div>
+
+<div class="book-details-btn-grid">
+    <a class="btn btn-primary" href="/places/<%= place.id %>/edit">Editar</a>
+    <%- include('../partials/deleteForm', { url: `/places/${place.id}` }) %>
+        <a class="btn btn-primary book-details-author-button" href="/categories/<%= place.category.id %>">Ver Todas Imagens dessa
+            Categoria</a>
+</div>
+  
+
+
